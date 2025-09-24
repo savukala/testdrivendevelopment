@@ -85,14 +85,14 @@ def test_recipe_service_should_return_error_for_unknown_recipes():
     recipe = "unknown"
     assert recipe_service.return_recipe(recipe_name=recipe) == "Recipe not found"
 
-def test_coffee_maker_brews_black_coffee():
+def test_coffee_maker_brews_black_coffee_during_office_hours():
     current_time = time_within_office_hours
     recipe_service = RecipeService()
     timer_service = TimerService(is_off_hours = False, current_time=current_time, crunch_time=crunch_time)
     coffee_maker = CoffeeMaker(timer_service=timer_service, recipe_service=recipe_service)
     assert coffee_maker.make_coffee(recipe = user_recipe) == "Enjoy your delicious coffee"
 
-def test_coffee_maker_brews_latte():
+def test_coffee_maker_brews_latte_during_office_hours():
     user_recipe = "latte"
     current_time = time_within_office_hours
     recipe_service = RecipeService()
@@ -100,7 +100,7 @@ def test_coffee_maker_brews_latte():
     coffee_maker = CoffeeMaker(timer_service=timer_service, recipe_service=recipe_service)
     assert coffee_maker.make_coffee(recipe=user_recipe) == "Enjoy your delicious coffee"
 
-def test_coffee_maker_brews_vegan_latte():
+def test_coffee_maker_brews_vegan_latte_during_office_hours():
     user_recipe = "vegan-latte"
     current_time = time_within_office_hours
     recipe_service = RecipeService()
