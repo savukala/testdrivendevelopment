@@ -8,5 +8,5 @@ Initial requirements:
 Make coffee
 
 Additional feature requests:
-Timer no cycle the coffee maker on/off
+Timer to cycle the coffee maker on/off
 Possibility to add more coffee recipes
