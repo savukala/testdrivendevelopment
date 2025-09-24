@@ -1,0 +1,12 @@
+The Scene
+------------------
+The High and Mighty Corporation you are working on has come up with a great way to save money and lift company profits!
+“We have decided to replace our coffee makers with a virtual one! Since most of you work from home most of the time, we have decided to provide you with a virtual coffee maker so you can enjoy your virtual coffee in your virtual office together!
+Now create one for us!”
+------------------
+Initial requirements:
+Make coffee
+
+Additional feature requests:
+Timer no cycle the coffee maker on/off
+Possibility to add more coffee recipes
