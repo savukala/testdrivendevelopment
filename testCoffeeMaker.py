@@ -8,14 +8,14 @@ time_placeholder = datetime(2025, 9, 23, 8, 0).time()
 crunch_time = False
 user_recipe = "black"
 
-def test_should_make_coffee():
+def test_coffee_maker_should_make_coffee():
     current_time = time_within_office_hours
     recipe_service = RecipeService()
     timer_service = TimerService(is_off_hours=False, current_time=current_time, crunch_time=crunch_time)
     maker = CoffeeMaker(timer_service=timer_service, recipe_service=recipe_service)
     assert maker.make_coffee(recipe = user_recipe) == "Enjoy your delicious coffee"
 
-def test_should_not_make_coffee_if_off_hours():
+def test_coffee_maker_should_not_make_coffee_if_off_hours():
     current_time = time_not_within_office_hours
     recipe_service = RecipeService()
     timer_service = TimerService(is_off_hours=True, current_time=current_time, crunch_time=crunch_time)
@@ -65,7 +65,7 @@ def test_timer_service_should_override_office_hours_if_crunch_time():
     maker = CoffeeMaker(timer_service=timer_service, recipe_service=recipe_service)
     assert maker.make_coffee(recipe=user_recipe) == "Enjoy your delicious coffee"
 
-def test_recipe_service_brews_black_coffee():
+def test_recipe_service_returns_black_coffee():
     recipe_service = RecipeService()
     recipe = "black"
     assert recipe_service.return_recipe(recipe_name=recipe) == "Standard black coffee"
