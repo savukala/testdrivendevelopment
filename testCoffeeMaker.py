@@ -107,3 +107,5 @@ def test_coffee_maker_brews_vegan_latte_during_office_hours():
     timer_service = TimerService(is_off_hours=False, current_time=current_time, crunch_time=crunch_time)
     coffee_maker = CoffeeMaker(timer_service=timer_service, recipe_service=recipe_service)
     assert coffee_maker.make_coffee(recipe=user_recipe) == "Enjoy your delicious coffee"
+
+
